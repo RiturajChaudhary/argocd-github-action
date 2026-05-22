@@ -146,7 +146,7 @@ spec:
 
         # ── 2. Express backend ───────────────────────────────────────────────
         - name: backend
-          image: rituraj4164/backend:latest   # ← patched by CI/CD
+          image: rituraj4164/backend:4936e8b
           ports:
             - containerPort: 5000
           envFrom:
@@ -177,7 +177,7 @@ spec:
 
         # ── 3. React frontend (nginx) ────────────────────────────────────────
         - name: frontend
-          image: rituraj4164/frontend:latest  # ← patched by CI/CD
+          image: rituraj4164/frontend:4936e8b
           ports:
             - containerPort: 80
           volumeMounts:
