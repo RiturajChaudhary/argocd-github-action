@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fullstack-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fullstack
+  template:
+    metadata:
+      labels:
+        app: fullstack
+    spec:
+      containers:
+
+        # 🌐 FRONTEND
+        - name: frontend
+          image: rituraj4164/frontend:latest
+          ports:
+            - containerPort: 80
+
+        # ⚙️ BACKEND
+        - name: backend
+          image: rituraj4164/backend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_HOST
+              value: "localhost"
+            - name: DB_USER
+              value: "root"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_NAME
+              value: "appdb"
+
+        # 🗄️ MYSQL
+        - name: mysql
+          image: mysql:8
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "password"
+            - name: MYSQL_DATABASE
+              value: "appdb"
