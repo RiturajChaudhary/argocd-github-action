@@ -16,13 +16,13 @@ spec:
 
         # 🌐 FRONTEND
         - name: frontend
-          image: rituraj4164/frontend:0eb6ec1
+          image: rituraj4164/frontend:ed5b279
           ports:
             - containerPort: 80
 
         # ⚙️ BACKEND
         - name: backend
-          image: rituraj4164/backend:0eb6ec1
+          image: rituraj4164/backend:ed5b279
           ports:
             - containerPort: 3000
           env:
