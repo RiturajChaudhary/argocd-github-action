@@ -63,7 +63,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: rituraj4164/backend:latest
+          image: rituraj4164/backend:9c754cc
           ports:
             - containerPort: 5000
           env:
@@ -118,7 +118,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: rituraj4164/frontend:latest
+          image: rituraj4164/frontend:9c754cc
           ports:
             - containerPort: 80
           readinessProbe:
